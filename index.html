@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Sustainogram</title>
+</head>
+<body>
+    <div class="container">
+      <div class="row">
+        <nav class="navbar navbar-light">
+            <a class="navbar-brand text-light">Sustainogram</a>
+            <span class="navbar-text text-light">
+                Login/Register
+            </span>
+        </nav>
+        <div class="col-7 drop">
+        <select class="form-control" id="dropdown">
+            <option value="none">Select Project</option>
+            <option class="dropdown-item" value="Afforestion">Afforestation</option>
+            <option class="dropdown-item" value="Aviation">Aviation</option>
+            <option class="dropdown-item" value="Bio">Biomethanization</option>
+            <option class="dropdown-item" value="EVchar">EV Charging</option>
+            <option class="dropdown-item" value="solar">Solar</option>
+          </select>
+        </div>
+
+        <div class="table my-5 hidden" id="Afforestion">
+            <table class="table table-bordered text-light">
+                <thead>
+                  <tr>
+                    <th scope="col">Fields</th>
+                    <th scope="col">Inputs</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Number of Trees Planted</th>
+                    <td><input type="text" class="form-control" name="" id="treesnumber"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Average Life of Planted</th>
+                    <td><input type="text" class="form-control" name="" id="avglife"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Sustaining Rate (% age)</th>
+                    <td><input type="text" class="form-control" name="" id="susrate"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Species of Trees Planted</th>
+                    <td ><input type="text" class="form-control" name="" id="spetree"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Location of Field?Forest</th>
+                    <td ><input type="text" class="form-control" name="" id="location"></td>
+                  </tr>
+                  <tr style="visibility: hidden;">
+                    <th scope="row"></th>
+                    <td><input type="text" name="" id=""></td>
+                  </tr>
+                  <tr>
+                    <th scope="row" >Calcuate</th>
+                    <td ><p id="affans" >0</p></td>
+                  </tr>
+
+                </tbody>
+              </table>
+        </div>
+        <div class="table my-5 hidden" id="Aviation">
+            <table class="table table-bordered text-light">
+                <thead>
+                  <tr>
+                    <th scope="col">Fields</th>
+                    <th scope="col">Inputs</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Volume of SAF Used in Ltrs</th>
+                    <td><input type="text" placeholder="Used in Ltrs" class="form-control" name="" id="avivol"></td>
+                  </tr>
+            
+                  <tr style="visibility: hidden;">
+                    <th scope="row">Location of Field?Forest</th>
+                    <td ><input type="text" name="" id=""></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Calcuate</th>
+                    <td ><p id="avians" >0</p></td>
+                  </tr>
+
+                </tbody>
+              </table>
+        </div>
+        <div class="table my-5 hidden" id="Bio">
+            <table class="table table-bordered text-light">
+                <thead>
+                  <tr>
+                    <th scope="col">Fields</th>
+                    <th scope="col">Inputs</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Capacity of Plants</th>
+                    <td><input type="text" placeholder="in millions cubic meters" class="form-control" name="" id="biocap"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Life of Plants</th>
+                    <td><input type="text" class="form-control" name="" id="biolif"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Methane Captured in Plant</th>
+                    <td><input type="text" placeholder="in millions cubic meters" class="form-control" name="" id="biometh"></td>
+                  </tr>
+                  <tr style="visibility: hidden;">
+                    <th scope="row">Location of Field?Forest</th>
+                    <td ><input type="text" name="" id=""></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Calcuate</th>
+                    <td ><p id="bioresult" >0</p></td>
+                  </tr>
+
+                </tbody>
+              </table>
+        </div>
+        <div class="table my-5 hidden" id="EVchar">
+            <table class="table table-bordered text-light">
+                <thead>
+                  <tr>
+                    <th scope="col">Fields</th>
+                    <th scope="col">Inputs</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Electricity Consumption Per Charging Session</th>
+                    <td><input type="text" class="form-control" name="" id="elecon"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Number of Charging Session Per Year</th>
+                    <td><input type="text" class="form-control" name="" id="numchar"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Emission Factor for Avoiding Grid Facility</th>
+                    <td><input type="text" placeholder="in Kg CO2/KWh" class="form-control" name="" id="Emission"></td>
+                  </tr>
+                  <tr style="visibility: hidden;">
+                    <th scope="row">Location of Field?Forest</th>
+                    <td ><input type="text" name="" id="fieldforest"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Calcuate</th>
+                    <td ><p id="evans" >0</p></td>
+                  </tr>
+
+                </tbody>
+              </table>
+        </div>
+        <div class="table my-5 hidden" id="solar">
+            <table class="table table-bordered text-light">
+                <thead>
+                  <tr>
+                    <th scope="col">Fields</th>
+                    <th scope="col">Inputs</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Capacity of Solar Power Plant</th>
+                    <td><input type="text" placeholder="in Mega watt" class="form-control" name="" id="solcap"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Local Electricity Grid Mix</th>
+                    <td><input type="text" class="form-control" name="" id="solloc"></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Life of solar Panels remaining</th>
+                    <td><input type="text" class="form-control" name="" id="sollif"></td>
+                  </tr>
+                  <tr style="visibility: hidden;">
+                    <th scope="row">Location of Field?Forest</th>
+                    <td ><input type="text" class="form-control" name="" id=""></td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Calcuate</th>
+                    <td ><p id="solans" >0</p></td>
+                  </tr>
+
+                </tbody>
+              </table>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+      
+</body>
+</html>
